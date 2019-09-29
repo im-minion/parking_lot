@@ -20,6 +20,8 @@ public interface IExecutor {
 
     void getSlotNumberFromRegNo(String regNo) throws ExecutorException;
 
+    void doCleanup();
+
     static void printList(List<String> list) {
         if (!list.isEmpty()) {
             String joined = String.join(", ", list);

@@ -170,6 +170,15 @@ public class Executor implements IExecutor {
         }
     }
 
+    @Override
+    public void doCleanup() {
+        this.slotCarMap = null;
+        MAX_SIZE = 0;
+        availableSlotList = null;
+        isParkingLotCreated = false;
+        lock = null;
+    }
+
     private <T> Stream<Car> getColorFilter(String color) {
         // will return the Stream<Car> having color -> 'color'
         return slotCarMap.values().stream().filter(x -> x.getColor().equals(color));
