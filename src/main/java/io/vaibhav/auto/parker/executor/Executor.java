@@ -48,8 +48,8 @@ public class Executor implements IExecutor {
     @Override
     public void park(String regNo, String color) throws ExecutorException {
         try {
-            lock.writeLock().lock();
             if (parkingLotCreated()) {
+                lock.writeLock().lock();
                 if (slotCarMap.size() == MAX_SIZE) {
                     System.out.println("Sorry, parking lot is full");
                 } else {
@@ -59,7 +59,6 @@ public class Executor implements IExecutor {
                     slotCarMap.put(slot, car);
                     System.out.println("Allocated slot number: " + slot);
                     availableSlotList.remove(0);
-
                 }
             }
         } catch (Exception e) {
