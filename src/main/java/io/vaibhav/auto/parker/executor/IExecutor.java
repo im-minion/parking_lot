@@ -22,10 +22,8 @@ public interface IExecutor {
         if (!list.isEmpty()) {
             String joined = String.join(", ", list);
             System.out.println(joined);
-            System.out.println();
         } else {
             System.out.println("Not found");
-            System.out.println();
         }
     }
 }

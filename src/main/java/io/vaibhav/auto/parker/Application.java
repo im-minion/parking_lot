@@ -29,7 +29,6 @@ public class Application {
                 }
                 break;
             case 1:
-                // File input/output TODO: verify
                 inputParser.parseFileInput(args[0]);
                 break;
             default:
