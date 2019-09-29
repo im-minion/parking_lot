@@ -19,7 +19,7 @@ public class Executor implements IExecutor {
     public void createParkingLot(String lotCount) {
         try {
             MAX_SIZE = Integer.parseInt(lotCount);
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             System.out.println("Invalid lot count");
             System.out.println();
         }
@@ -84,12 +84,6 @@ public class Executor implements IExecutor {
                 // Print the current status.
                 System.out.println("Slot No.\t\tRegistration No.\t\tColor");
 
-//                IntStream.range(1, MAX_SIZE + 1).forEach(slotIndex->{
-//                    Car car = slotCarMap.get(((int) slotIndex));
-//                    if (null != slotCarMap.get(slotIndex)) {
-//                        System.out.println(slotIndex + "\t" + car.getRegistrationNo() + "\t" + car.getColor());
-//                    }
-//                });
                 Car car;
                 for (int i = 1; i <= MAX_SIZE; i++) {
                     String key = Integer.toString(i);
@@ -110,7 +104,7 @@ public class Executor implements IExecutor {
     public void getRegistrationNumbersFromColor(String color) {
         if (parkingLotCreated()) {
             List<String> carRegNoList = slotCarMap.values().stream().filter(x -> x.getColor().equals(color)).map(Car::getRegistrationNo).collect(Collectors.toList());
-            printList(carRegNoList);
+            IExecutor.printList(carRegNoList);
         }
     }
 
@@ -118,7 +112,7 @@ public class Executor implements IExecutor {
     public void getSlotNumbersFromColor(String color) {
         if (parkingLotCreated()) {
             List<String> carSlotNoList = slotCarMap.values().stream().filter(x -> x.getColor().equals(color)).map(Car::getSlotIndex).collect(Collectors.toList());
-            printList(carSlotNoList);
+            IExecutor.printList(carSlotNoList);
         }
     }
 
@@ -143,14 +137,14 @@ public class Executor implements IExecutor {
         }
         return true;
     }
-
-    private void printList(List<String> list) {
-        if (!list.isEmpty()) {
-            System.out.println(list); //TODO: May have to iterate bcz of ","
-            System.out.println();
-        } else {
-            System.out.println("Not found");
-            System.out.println();
-        }
-    }
+//
+//    private void printList(List<String> list) {
+//        if (!list.isEmpty()) {
+//            System.out.println(list); //TODO: May have to iterate bcz of ","
+//            System.out.println();
+//        } else {
+//            System.out.println("Not found");
+//            System.out.println();
+//        }
+//    }
 }
