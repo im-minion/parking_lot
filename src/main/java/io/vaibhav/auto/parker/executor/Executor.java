@@ -82,7 +82,7 @@ public class Executor implements IExecutor {
         if (parkingLotCreated()) {
             if (slotCarMap.size() > 0) {
                 // Print the current status.
-                System.out.println("Slot No.\t\tRegistration No.\t\tColor");
+                System.out.println("Slot No.\tRegistration No.\tColor");
 
                 Car car;
                 for (int i = 1; i <= MAX_SIZE; i++) {
@@ -137,14 +137,4 @@ public class Executor implements IExecutor {
         }
         return true;
     }
-//
-//    private void printList(List<String> list) {
-//        if (!list.isEmpty()) {
-//            System.out.println(list); //TODO: May have to iterate bcz of ","
-//            System.out.println();
-//        } else {
-//            System.out.println("Not found");
-//            System.out.println();
-//        }
-//    }
 }
