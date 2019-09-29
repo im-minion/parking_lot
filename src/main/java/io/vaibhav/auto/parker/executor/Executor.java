@@ -1,8 +1,14 @@
 package io.vaibhav.auto.parker.executor;
 
+import io.vaibhav.auto.parker.exception.ErrorCode;
+import io.vaibhav.auto.parker.exception.ExecutorException;
 import io.vaibhav.auto.parker.model.Car;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -15,6 +21,8 @@ public class Executor implements IExecutor {
     private Map<String, Car> slotCarMap;
 
     private static boolean isParkingLotCreated = false;
+
+    private ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
     @Override
     public void createParkingLot(String lotCount) {
@@ -38,85 +46,128 @@ public class Executor implements IExecutor {
     }
 
     @Override
-    public void park(String regNo, String color) {
-        if (parkingLotCreated()) {
-            if (slotCarMap.size() == MAX_SIZE) {
-                System.out.println("Sorry, parking lot is full");
-            } else {
-                Collections.sort(availableSlotList);
-                String slot = availableSlotList.get(0).toString();
-                Car car = new Car(regNo, color, slot);
-                slotCarMap.put(slot, car);
-                System.out.println("Allocated slot number: " + slot);
-                availableSlotList.remove(0);
-            }
-        }
-    }
-
-    @Override
-    public void leave(String slotNo) {
-        if (parkingLotCreated()) {
-            if (slotCarMap.size() > 0) {
-                Car carToLeave = slotCarMap.get(slotNo);
-                if (carToLeave != null) {
-                    slotCarMap.remove(slotNo);
-                    availableSlotList.add(Integer.parseInt(slotNo));
-                    System.out.println("Slot number " + slotNo + " is free");
+    public void park(String regNo, String color) throws ExecutorException {
+        try {
+            lock.writeLock().lock();
+            if (parkingLotCreated()) {
+                if (slotCarMap.size() == MAX_SIZE) {
+                    System.out.println("Sorry, parking lot is full");
                 } else {
-                    System.out.println("Slot number " + slotNo + " is already empty");
+                    Collections.sort(availableSlotList);
+                    String slot = availableSlotList.get(0).toString();
+                    Car car = new Car(regNo, color, slot);
+                    slotCarMap.put(slot, car);
+                    System.out.println("Allocated slot number: " + slot);
+                    availableSlotList.remove(0);
+
                 }
-            } else {
-                System.out.println("Parking lot is empty");
             }
+        } catch (Exception e) {
+            throw new ExecutorException(ErrorCode.PROCESSING_ERROR.getMessage(), e);
+        } finally {
+            lock.writeLock().unlock();
         }
     }
 
     @Override
-    public void status() {
-        if (parkingLotCreated()) {
-            if (slotCarMap.size() > 0) {
-                // Print the current status.
-                System.out.println("Slot No.\tRegistration No \tColour");
-
-                Car car;
-                for (int i = 1; i <= MAX_SIZE; i++) {
-                    String key = Integer.toString(i);
-                    if (slotCarMap.containsKey(key)) {
-                        car = slotCarMap.get(key);
-                        System.out.println(i + "\t\t" + car.getRegistrationNo() + "\t\t" + car.getColor());
+    public void leave(String slotNo) throws ExecutorException {
+        try {
+            if (parkingLotCreated()) {
+                lock.writeLock().lock();
+                if (slotCarMap.size() > 0) {
+                    Car carToLeave = slotCarMap.get(slotNo);
+                    if (carToLeave != null) {
+                        slotCarMap.remove(slotNo);
+                        availableSlotList.add(Integer.parseInt(slotNo));
+                        System.out.println("Slot number " + slotNo + " is free");
+                    } else {
+                        System.out.println("Slot number " + slotNo + " is already empty");
                     }
+                } else {
+                    System.out.println("Parking lot is empty");
                 }
-            } else {
-                System.out.println("Parking lot is empty");
+
             }
+        } catch (Exception e) {
+            throw new ExecutorException(ErrorCode.INVALID_VALUE.getMessage().replace("{variable}", "slot_number"), e);
+        } finally {
+            lock.writeLock().lock();
         }
     }
 
     @Override
-    public void getRegistrationNumbersFromColor(String color) {
-        if (parkingLotCreated()) {
-            List<String> carRegNoList = getColorFilter(color).map(Car::getRegistrationNo).collect(Collectors.toList());
-            IExecutor.printList(carRegNoList);
-        }
-    }
+    public void status() throws ExecutorException {
+        try {
+            if (parkingLotCreated()) {
+                lock.readLock().lock();
+                if (slotCarMap.size() > 0) {
+                    // Print the current status.
+                    System.out.println("Slot No.\tRegistration No \tColour");
 
-    @Override
-    public void getSlotNumbersFromColor(String color) {
-        if (parkingLotCreated()) {
-            List<String> carSlotNoList = getColorFilter(color).map(Car::getSlotIndex).collect(Collectors.toList());
-            IExecutor.printList(carSlotNoList);
-        }
-    }
-
-    @Override
-    public void getSlotNumberFromRegNo(String regNo) {
-        if (parkingLotCreated()) {
-            String slotNum = slotCarMap.values().stream().filter(x -> x.getRegistrationNo().equals(regNo)).map(Car::getSlotIndex).collect(Collectors.joining());
-            if (!slotNum.isEmpty()) {
-                System.out.println(slotNum);
-            } else {
-                System.out.println("Not found");
+                    Car car;
+                    for (int i = 1; i <= MAX_SIZE; i++) {
+                        String key = Integer.toString(i);
+                        if (slotCarMap.containsKey(key)) {
+                            car = slotCarMap.get(key);
+                            System.out.println(i + "\t\t" + car.getRegistrationNo() + "\t\t" + car.getColor());
+                        }
+                    }
+                } else {
+                    System.out.println("Parking lot is empty");
+                }
             }
+        } catch (Exception e) {
+            throw new ExecutorException(ErrorCode.PROCESSING_ERROR.getMessage(), e);
+        } finally {
+            lock.readLock().unlock();
+        }
+    }
+
+    @Override
+    public void getRegistrationNumbersFromColor(String color) throws ExecutorException {
+        try {
+            if (parkingLotCreated()) {
+                lock.readLock().lock();
+                IExecutor.printList(getColorFilter(color).map(Car::getRegistrationNo).collect(Collectors.toList()));
+
+            }
+        } catch (Exception e) {
+            throw new ExecutorException(ErrorCode.PROCESSING_ERROR.getMessage(), e);
+        } finally {
+            lock.readLock().unlock();
+        }
+    }
+
+    @Override
+    public void getSlotNumbersFromColor(String color) throws ExecutorException {
+        try {
+            if (parkingLotCreated()) {
+                lock.readLock().lock();
+                IExecutor.printList(getColorFilter(color).map(Car::getSlotIndex).collect(Collectors.toList()));
+            }
+        } catch (Exception e) {
+            throw new ExecutorException(ErrorCode.PROCESSING_ERROR.getMessage(), e);
+        } finally {
+            lock.readLock().unlock();
+        }
+    }
+
+    @Override
+    public void getSlotNumberFromRegNo(String regNo) throws ExecutorException {
+        try {
+            if (parkingLotCreated()) {
+                lock.readLock().lock();
+                String slotNum = slotCarMap.values().stream().filter(x -> x.getRegistrationNo().equals(regNo)).map(Car::getSlotIndex).collect(Collectors.joining());
+                if (!slotNum.isEmpty()) {
+                    System.out.println(slotNum);
+                } else {
+                    System.out.println("Not found");
+                }
+            }
+        } catch (Exception e) {
+            throw new ExecutorException(ErrorCode.PROCESSING_ERROR.getMessage(), e);
+        } finally {
+            lock.readLock().unlock();
         }
     }
 

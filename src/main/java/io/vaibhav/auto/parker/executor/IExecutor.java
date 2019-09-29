@@ -1,22 +1,24 @@
 package io.vaibhav.auto.parker.executor;
 
+import io.vaibhav.auto.parker.exception.ExecutorException;
+
 import java.util.List;
 
 
 public interface IExecutor {
     void createParkingLot(String lotCount);
 
-    void park(String regNo, String color);
+    void park(String regNo, String color) throws ExecutorException;
 
-    void leave(String slotNo);
+    void leave(String slotNo) throws ExecutorException;
 
-    void status();
+    void status() throws ExecutorException;
 
-    void getRegistrationNumbersFromColor(String color);
+    void getRegistrationNumbersFromColor(String color) throws ExecutorException;
 
-    void getSlotNumbersFromColor(String color);
+    void getSlotNumbersFromColor(String color) throws ExecutorException;
 
-    void getSlotNumberFromRegNo(String regNo);
+    void getSlotNumberFromRegNo(String regNo) throws ExecutorException;
 
     static void printList(List<String> list) {
         if (!list.isEmpty()) {

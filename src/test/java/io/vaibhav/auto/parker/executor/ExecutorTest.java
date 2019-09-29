@@ -19,11 +19,11 @@
 //    }
 //
 //    @org.junit.Beforesz
-//    public void setUp() throws Exception {
+//    public void setUp() throws exception {
 //    }
 //
 //    @org.junit.After
-//    public void tearDown() throws Exception {
+//    public void tearDown() throws exception {
 //    }
 //
 //    @org.junit.Test
