@@ -20,10 +20,8 @@ public interface IExecutor {
 
     static void printList(List<String> list) {
         if (!list.isEmpty()) {
-            System.out.println(list.get(0)); //TODO: May have to iterate bcz of ","
-            list.forEach(sl -> {
-                System.out.println(", " + sl);
-            });
+            String joined = String.join(", ", list);
+            System.out.println(joined);
             System.out.println();
         } else {
             System.out.println("Not found");
