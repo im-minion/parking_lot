@@ -1,6 +1,7 @@
 package io.vaibhav.auto.parker.constants;
 
 import io.vaibhav.auto.parker.executor.IExecutor;
+import io.vaibhav.auto.parker.model.VehicleSize;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -19,8 +20,8 @@ public class Commands {
     }
 
     private void populateCommandsMap() throws NoSuchMethodException {
-        commandsMap.put("create_parking_lot", IExecutor.class.getMethod("createParkingLot", String.class));
-        commandsMap.put("park", IExecutor.class.getMethod("park", String.class, String.class));
+        commandsMap.put("create_parking_lot", IExecutor.class.getMethod("createParkingLot", String.class, String.class, String.class));
+        commandsMap.put("park", IExecutor.class.getMethod("park", String.class, String.class, String.class));
         commandsMap.put("leave", IExecutor.class.getMethod("leave", String.class));
         commandsMap.put("status", IExecutor.class.getMethod("status"));
         commandsMap.put("registration_numbers_for_cars_with_colour", IExecutor.class.getMethod("getRegistrationNumbersFromColor", String.class));

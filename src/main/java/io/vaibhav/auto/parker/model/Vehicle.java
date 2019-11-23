@@ -1,14 +1,16 @@
 package io.vaibhav.auto.parker.model;
 
-abstract class Vehicle {
+public class Vehicle {
     private String registrationNo;
     private String color;
     private String slotIndex;
+    private VehicleSize vehicleSize;
 
-    Vehicle(String registrationNo, String color, String slotIndex) {
+    public Vehicle(String registrationNo, String color, String slotIndex, VehicleSize vehicleSize) {
         this.registrationNo = registrationNo;
         this.color = color;
         this.slotIndex = slotIndex;
+        this.vehicleSize = vehicleSize;
     }
 
     @Override
@@ -42,5 +44,13 @@ abstract class Vehicle {
 
     public void setSlotIndex(String slotIndex) {
         this.slotIndex = slotIndex;
+    }
+
+    public VehicleSize getVehicleSize() {
+        return vehicleSize;
+    }
+
+    public void setVehicleSize(VehicleSize vehicleSize) {
+        this.vehicleSize = vehicleSize;
     }
 }

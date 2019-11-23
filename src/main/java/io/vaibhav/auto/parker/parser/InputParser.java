@@ -27,11 +27,14 @@ public class InputParser {
                 case 1://status
                     method.invoke(executor);
                     break;
-                case 2://create, leave, getRegNoByColor, getSlotNoByColor, getSlotNoByRegNo
+                case 2:// leave, getRegNoByColor, getSlotNoByColor, getSlotNoByRegNo
                     method.invoke(executor, commandArray[1]);
                     break;
-                case 3: //park
+                case 3: //
                     method.invoke(executor, commandArray[1], commandArray[2]);
+                    break;
+                case 4: //create sCount mCount lCount  //park reg color vehicleSize
+                    method.invoke(executor, commandArray[1], commandArray[2], commandArray[3]);
                     break;
                 default:
                     System.out.println("Invalid input.");

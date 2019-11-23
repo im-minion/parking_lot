@@ -2,10 +2,10 @@ package io.vaibhav.auto.parker.executor;
 
 import io.vaibhav.auto.parker.exception.ErrorCode;
 import io.vaibhav.auto.parker.exception.ExecutorException;
-import io.vaibhav.auto.parker.model.Car;
+import io.vaibhav.auto.parker.model.Vehicle;
+import io.vaibhav.auto.parker.model.VehicleSize;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -18,27 +18,36 @@ public class Executor implements IExecutor {
     // Available slots list
     private static ArrayList<Integer> availableSlotList;
     // Map of Slot, Car
-    private Map<String, Car> slotCarMap;
+    private Map<String, Vehicle> slotCarMap;
 
     private static boolean isParkingLotCreated = false;
+
+    private int sStartIndex;
+    private int mStartIndex;
+    private int lStartIndex;
 
     private ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
     @Override
-    public void createParkingLot(String lotCount) {
+    public void createParkingLot(String sLotCount, String mLotCount, String lLotCount) {
         try {
-            MAX_SIZE = Integer.parseInt(lotCount);
+            MAX_SIZE = Integer.parseInt(sLotCount) + Integer.parseInt(mLotCount) + Integer.parseInt(lLotCount);
         } catch (NumberFormatException e) {
             System.out.println("Invalid lot count");
         }
+
+        sStartIndex = 0;
+        mStartIndex = Integer.parseInt(sLotCount);
+        lStartIndex = Integer.parseInt(sLotCount) + Integer.parseInt(mLotCount);
+
         if (!isParkingLotCreated) {
             availableSlotList = new ArrayList<>();
-            IntStream.range(1, MAX_SIZE + 1).forEach(x -> {
+            IntStream.range(0, MAX_SIZE).forEach(x -> {
                 availableSlotList.add(x);
             });
             slotCarMap = new HashMap<>();
             isParkingLotCreated = true;
-            System.out.println("Created parking lot with " + lotCount + " slots");
+            System.out.println("Created parking lot with " + sLotCount + " slots");
         } else {
             System.out.println("Parking Lot Already Created, Can't Create new One!");
         }
@@ -46,19 +55,31 @@ public class Executor implements IExecutor {
     }
 
     @Override
-    public void park(String regNo, String color) throws ExecutorException {
+    public void park(String regNo, String color, String vehicleS) throws ExecutorException {
         try {
             if (parkingLotCreated()) {
                 lock.writeLock().lock();
+                boolean isParked = false;
+                VehicleSize vehicleSize = VehicleSize.valueOf(vehicleS);
+                int startIndexToPark = getStartingIndexFromSize(vehicleSize);
                 if (slotCarMap.size() == MAX_SIZE) {
                     System.out.println("Sorry, parking lot is full");
                 } else {
-                    Collections.sort(availableSlotList);
-                    String slot = availableSlotList.get(0).toString();
-                    Car car = new Car(regNo, color, slot);
-                    slotCarMap.put(slot, car);
-                    System.out.println("Allocated slot number: " + slot);
-                    availableSlotList.remove(0);
+                    for (int i = startIndexToPark; i < MAX_SIZE; i++) {
+                        if (!availableSlotList.get(i).equals(Integer.MAX_VALUE)) {
+                            //park
+                            String slot = availableSlotList.get(i).toString();
+                            Vehicle vehicle = new Vehicle(regNo, color, slot, vehicleSize);
+                            slotCarMap.put(slot, vehicle);
+                            availableSlotList.set(i, Integer.MAX_VALUE);
+                            isParked = true;
+                            System.out.println("Allocated slot number: " + slot);
+                            break;
+                        }
+                    }
+                    if (!isParked) {
+                        System.out.println("Sorry, parking lot is full for SIZE");
+                    }
                 }
             }
         } catch (Exception e) {
@@ -68,16 +89,21 @@ public class Executor implements IExecutor {
         }
     }
 
+    private int getStartingIndexFromSize(VehicleSize vehicleSize) {
+        return (vehicleSize.equals(VehicleSize.SMALL) ? sStartIndex : vehicleSize.equals(VehicleSize.MEDIUM) ? mStartIndex : lStartIndex);
+    }
+
     @Override
     public void leave(String slotNo) throws ExecutorException {
         try {
             if (parkingLotCreated()) {
                 lock.writeLock().lock();
                 if (slotCarMap.size() > 0) {
-                    Car carToLeave = slotCarMap.get(slotNo);
-                    if (carToLeave != null) {
+                    Vehicle vehicleToLeave = slotCarMap.get(slotNo);
+                    if (vehicleToLeave != null) {
                         slotCarMap.remove(slotNo);
-                        availableSlotList.add(Integer.parseInt(slotNo));
+                        int slot = Integer.parseInt(slotNo);
+                        availableSlotList.set(slot,slot);
                         System.out.println("Slot number " + slotNo + " is free");
                     } else {
                         System.out.println("Slot number " + slotNo + " is already empty");
@@ -103,12 +129,12 @@ public class Executor implements IExecutor {
                     // Print the current status.
                     System.out.println("Slot No.\tRegistration No \tColour");
 
-                    Car car;
+                    Vehicle vehicle;
                     for (int i = 1; i <= MAX_SIZE; i++) {
                         String key = Integer.toString(i);
                         if (slotCarMap.containsKey(key)) {
-                            car = slotCarMap.get(key);
-                            System.out.println(i + "\t\t" + car.getRegistrationNo() + "\t\t" + car.getColor());
+                            vehicle = slotCarMap.get(key);
+                            System.out.println(i + "\t\t" + vehicle.getRegistrationNo() + "\t\t" + vehicle.getColor());
                         }
                     }
                 } else {
@@ -127,7 +153,7 @@ public class Executor implements IExecutor {
         try {
             if (parkingLotCreated()) {
                 lock.readLock().lock();
-                IExecutor.printList(getColorFilter(color).map(Car::getRegistrationNo).collect(Collectors.toList()));
+                IExecutor.printList(getColorFilter(color).map(Vehicle::getRegistrationNo).collect(Collectors.toList()));
 
             }
         } catch (Exception e) {
@@ -142,7 +168,7 @@ public class Executor implements IExecutor {
         try {
             if (parkingLotCreated()) {
                 lock.readLock().lock();
-                IExecutor.printList(getColorFilter(color).map(Car::getSlotIndex).collect(Collectors.toList()));
+                IExecutor.printList(getColorFilter(color).map(Vehicle::getSlotIndex).collect(Collectors.toList()));
             }
         } catch (Exception e) {
             throw new ExecutorException(ErrorCode.PROCESSING_ERROR.getMessage(), e);
@@ -156,7 +182,7 @@ public class Executor implements IExecutor {
         try {
             if (parkingLotCreated()) {
                 lock.readLock().lock();
-                String slotNum = slotCarMap.values().stream().filter(x -> x.getRegistrationNo().equals(regNo)).map(Car::getSlotIndex).collect(Collectors.joining());
+                String slotNum = slotCarMap.values().stream().filter(x -> x.getRegistrationNo().equals(regNo)).map(Vehicle::getSlotIndex).collect(Collectors.joining());
                 if (!slotNum.isEmpty()) {
                     System.out.println(slotNum);
                 } else {
@@ -179,7 +205,7 @@ public class Executor implements IExecutor {
         lock = null;
     }
 
-    private <T> Stream<Car> getColorFilter(String color) {
+    private <T> Stream<Vehicle> getColorFilter(String color) {
         // will return the Stream<Car> having color -> 'color'
         return slotCarMap.values().stream().filter(x -> x.getColor().equals(color));
     }
