@@ -8,6 +8,7 @@ import io.vaibhav.auto.parker.model.VehicleSize;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -78,7 +79,7 @@ public class Executor implements IExecutor {
                         }
                     }
                     if (!isParked) {
-                        System.out.println("Sorry, parking lot is full for SIZE");
+                        System.out.println("Sorry, parking lot is full for this Size!");
                     }
                 }
             }
@@ -103,7 +104,7 @@ public class Executor implements IExecutor {
                     if (vehicleToLeave != null) {
                         slotCarMap.remove(slotNo);
                         int slot = Integer.parseInt(slotNo);
-                        availableSlotList.set(slot,slot);
+                        availableSlotList.set(slot, slot);
                         System.out.println("Slot number " + slotNo + " is free");
                     } else {
                         System.out.println("Slot number " + slotNo + " is already empty");
@@ -130,7 +131,7 @@ public class Executor implements IExecutor {
                     System.out.println("Slot No.\tRegistration No \tColour");
 
                     Vehicle vehicle;
-                    for (int i = 1; i <= MAX_SIZE; i++) {
+                    for (int i = 0; i <= MAX_SIZE; i++) {
                         String key = Integer.toString(i);
                         if (slotCarMap.containsKey(key)) {
                             vehicle = slotCarMap.get(key);
@@ -182,9 +183,9 @@ public class Executor implements IExecutor {
         try {
             if (parkingLotCreated()) {
                 lock.readLock().lock();
-                String slotNum = slotCarMap.values().stream().filter(x -> x.getRegistrationNo().equals(regNo)).map(Vehicle::getSlotIndex).collect(Collectors.joining());
-                if (!slotNum.isEmpty()) {
-                    System.out.println(slotNum);
+                Optional<String> slotNum = slotCarMap.values().stream().filter(x -> x.getRegistrationNo().equals(regNo)).findFirst().map(Vehicle::getSlotIndex);
+                if (slotNum.isPresent()) {
+                    System.out.println(slotNum.get());
                 } else {
                     System.out.println("Not found");
                 }

@@ -1,13 +1,12 @@
 package io.vaibhav.auto.parker.executor;
 
 import io.vaibhav.auto.parker.exception.ExecutorException;
-import io.vaibhav.auto.parker.model.VehicleSize;
 
 import java.util.List;
 
 
 public interface IExecutor {
-    void createParkingLot(String sLotCount,String mLotCount, String lLotCount);
+    void createParkingLot(String sLotCount, String mLotCount, String lLotCount);
 
     void park(String regNo, String color, String vehicleSize) throws ExecutorException;
 

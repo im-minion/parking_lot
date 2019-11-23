@@ -6,7 +6,7 @@ import io.vaibhav.auto.parker.executor.IExecutor;
 
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method; //just want to use invoke method
+import java.lang.reflect.Method;
 
 public class InputParser {
 

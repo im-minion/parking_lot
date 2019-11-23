@@ -1,7 +1,6 @@
 package io.vaibhav.auto.parker.constants;
 
 import io.vaibhav.auto.parker.executor.IExecutor;
-import io.vaibhav.auto.parker.model.VehicleSize;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
