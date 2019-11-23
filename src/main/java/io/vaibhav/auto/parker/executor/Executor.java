@@ -48,7 +48,7 @@ public class Executor implements IExecutor {
             });
             slotCarMap = new HashMap<>();
             isParkingLotCreated = true;
-            System.out.println("Created parking lot with " + sLotCount + " slots");
+            System.out.println("Created parking lot with " + sLotCount + " Small sized slots, " + mLotCount +" Medium sized slots and " + lLotCount + "Large sized slots.");
         } else {
             System.out.println("Parking Lot Already Created, Can't Create new One!");
         }
