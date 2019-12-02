@@ -3,13 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="3680f602-8309-4af1-9bd2-b9b1b47cf447" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/exception/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/exception/ErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/constants/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/constants/Commands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/IExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/IExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/io/vaibhav/auto/parker/executor/ExecutorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/io/vaibhav/auto/parker/executor/ExecutorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/vaibhav/auto/parker/exception/ExecutorException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/vaibhav/auto/parker/exception/ExecutorException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/vaibhav/auto/parker/executor/Executor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/vaibhav/auto/parker/executor/Executor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/parkinglot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/parkinglot-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/vaibhav/auto/parker/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/vaibhav/auto/parker/constants/Commands.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/vaibhav/auto/parker/exception/ErrorCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/vaibhav/auto/parker/exception/ExecutorException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/vaibhav/auto/parker/executor/Executor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/vaibhav/auto/parker/executor/IExecutor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/vaibhav/auto/parker/model/Car.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/vaibhav/auto/parker/model/Vehicle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/vaibhav/auto/parker/parser/InputParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/parkinglot-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-io.vaibhav.auto.parker.executor.ExecutorTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/io.vaibhav.auto.parker.executor.ExecutorTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/io/vaibhav/auto/parker/executor/ExecutorTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,7 +35,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/AutoParker$ExecutorTest.ic" NAME="ExecutorTest Coverage Results" MODIFIED="1569776424851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/AutoParker$ExecutorTest.ic" NAME="ExecutorTest Coverage Results" MODIFIED="1569776974342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>io.vaibhav.auto.parker.executor.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/AutoParker$ExecutorTest_createParkingLot.ic" NAME="ExecutorTest.createParkingLot Coverage Results" MODIFIED="1569771294856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -31,21 +46,25 @@
     </SUITE>
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="448" />
+    <option name="myElementSize" value="525" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1073128406">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.37" value="1" />
+          <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.65" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="5" />
-          <entry key="java" value="27" />
+          <entry key="java" value="50" />
+          <entry key="md" value="1" />
           <entry key="sh" value="3" />
           <entry key="xml" value="2" />
         </counts>
@@ -53,7 +72,8 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="5" />
-          <entry key="JAVA" value="27" />
+          <entry key="JAVA" value="50" />
+          <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="XML" value="2" />
         </counts>
@@ -61,14 +81,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="15" />
-          <entry key="java" value="3520" />
+          <entry key="java" value="4986" />
+          <entry key="md" value="49" />
           <entry key="txt" value="104" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3520" />
+          <entry key="JAVA" value="4986" />
+          <entry key="Markdown" value="49" />
           <entry key="PLAIN_TEXT" value="119" />
           <entry key="XML" value="4" />
         </counts>
@@ -77,27 +99,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/io/vaibhav/auto/parker/executor/ExecutorTest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="98" column="72" selection-start-line="98" selection-start-column="72" selection-end-line="98" selection-end-column="72" />
+            <state relative-caret-position="357">
+              <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#354#355#0" expanded="true" />
-                <element signature="e#412#413#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/model/Floor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="101">
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/model/ParkingSpace.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="125" column="47" selection-start-line="125" selection-start-column="16" selection-end-line="125" selection-end-column="47" />
+            <state relative-caret-position="238">
+              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#193#194#0" expanded="true" />
+                <element signature="e#222#223#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,7 +140,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/IExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="204">
               <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -116,19 +150,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/exception/ErrorCode.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/parser/InputParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="305">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-272">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="374">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/constants/Commands.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="23" column="30" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,10 +202,16 @@
       <find>this.</find>
       <find>parkingLotCreated</find>
       <find>System.out.println()</find>
+      <find>TOTAL_LOTS_SIZE</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="v1_s_variant" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="projectSyncType">
@@ -181,13 +239,17 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/parking_lot.sh" />
         <option value="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/model/Car.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/constants/Commands.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/exception/ExecutorException.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/exception/ErrorCode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/IExecutor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/model/ParkingSpace.java" />
         <option value="$PROJECT_DIR$/src/test/java/io/vaibhav/auto/parker/executor/ExecutorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/parser/InputParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/IExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/constants/Commands.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/model/Floor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java" />
       </list>
     </option>
   </component>
@@ -198,8 +260,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -209,6 +270,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -287,41 +349,19 @@
               <item name="parker" type="462c0819:PsiDirectoryNode" />
               <item name="parser" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="AutoParker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoParker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoParker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoParker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoParker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoParker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="executor" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/JavaPractices/AutoParker/src/main/java/io/vaibhav/auto/parker/executor/Executor.java&#10;Exec&#9;FILE&#9;file://D:/JavaPractices/AutoParker/src/main/java/io/vaibhav/auto/parker/executor/Executor.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569776963640" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575301651162" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
@@ -355,7 +395,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ExecutorTest">
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.vaibhav.auto.parker.Application" />
+      <module name="parking_lot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.vaibhav.auto.parker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ExecutorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="parking_lot" />
       <extension name="coverage">
@@ -418,83 +471,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExecutorTest.testStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="parking_lot" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.vaibhav.auto.parker.executor.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.vaibhav.auto.parker.executor" />
-      <option name="MAIN_CLASS_NAME" value="io.vaibhav.auto.parker.executor.ExecutorTest" />
-      <option name="METHOD_NAME" value="testStatus" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="parking_lot" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="parking_lot" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="JUnit.ExecutorTest.testGetSlotsByRegNo" />
-      <item itemvalue="JUnit.ExecutorTest.testStatus" />
       <item itemvalue="JUnit.ExecutorTest.testGetSlotsByColor" />
       <item itemvalue="JUnit.ExecutorTest.testGetREgNoByColor" />
       <item itemvalue="JUnit.ExecutorTest" />
+      <item itemvalue="Application.Application" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Application" />
         <item itemvalue="JUnit.ExecutorTest" />
         <item itemvalue="JUnit.ExecutorTest.testGetREgNoByColor" />
         <item itemvalue="JUnit.ExecutorTest.testGetSlotsByRegNo" />
         <item itemvalue="JUnit.ExecutorTest.testGetSlotsByColor" />
-        <item itemvalue="JUnit.ExecutorTest.testStatus" />
       </list>
     </recent_temporary>
   </component>
@@ -509,7 +499,10 @@
       <option name="presentableId" value="Default" />
       <updated>1569612703201</updated>
       <workItem from="1569612704757" duration="16887000" />
-      <workItem from="1569700329395" duration="26814000" />
+      <workItem from="1569700329395" duration="27292000" />
+      <workItem from="1575143625255" duration="1071000" />
+      <workItem from="1575193119568" duration="9670000" />
+      <workItem from="1575219074503" duration="5562000" />
     </task>
     <task id="LOCAL-00001" summary="done with adding the exception and reentrant locks">
       <created>1569768627528</created>
@@ -529,15 +522,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExecutorTest_testGetSlotsByRegNo - 2019.09.29 at 22h 29m 17s.xml">
-      <configuration name="ExecutorTest.testGetSlotsByRegNo" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecutorTest_testGetSlotsByRegNo - 2019.09.29 at 22h 29m 44s.xml">
-      <configuration name="ExecutorTest.testGetSlotsByRegNo" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExecutorTest - 2019.09.29 at 22h 30m 34s.xml">
-      <configuration name="ExecutorTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ExecutorTest_testLeave - 2019.09.29 at 22h 34m 23s.xml">
       <configuration name="ExecutorTest.testLeave" configurationId="JUnit" />
     </history-entry>
@@ -559,15 +543,32 @@
     <history-entry file="ExecutorTest_testGetSlotsByRegNo - 2019.09.29 at 22h 38m 25s.xml">
       <configuration name="ExecutorTest.testGetSlotsByRegNo" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ExecutorTest_testGetREgNoByColor - 2019.09.29 at 22h 39m 27s.xml">
+      <configuration name="ExecutorTest.testGetREgNoByColor" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecutorTest - 2019.09.29 at 22h 39m 41s.xml">
+      <configuration name="ExecutorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ExecutorTest - 2019.12.01 at 17h 33m 02s.xml">
+      <configuration name="ExecutorTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43701000" />
+    <option name="totallyTimeSpent" value="60496000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.35164836" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21028744" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -577,17 +578,16 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.20458265" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.43207857" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29623568" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.40589198" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32405892" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.7655068" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -597,6 +597,7 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3804841" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22995462" />
@@ -645,68 +646,44 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/Application.java</url>
-          <line>14</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/parser/InputParser.java</url>
           <line>22</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/Application.java</url>
-          <line>18</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
-          <line>20</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
-          <line>42</line>
+          <line>49</line>
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
-          <line>81</line>
-          <properties />
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
-          <line>110</line>
+          <line>144</line>
           <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
-          <line>118</line>
+          <line>152</line>
           <properties />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
-          <line>126</line>
+          <line>160</line>
           <properties />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
-          <line>138</line>
+          <line>172</line>
           <properties />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
-          <line>147</line>
+          <line>181</line>
           <properties />
           <option name="timeStamp" value="35" />
         </line-breakpoint>
@@ -718,29 +695,104 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
-          <line>73</line>
+          <line>103</line>
           <properties />
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
-          <line>82</line>
+          <line>116</line>
           <properties />
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
-          <line>158</line>
+          <line>192</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
           </properties>
           <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/parser/InputParser.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
+          <line>85</line>
+          <properties />
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
+          <line>94</line>
+          <properties />
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
+          <line>97</line>
+          <properties />
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
+          <line>88</line>
+          <properties />
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
+          <line>77</line>
+          <properties />
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java</url>
+          <line>92</line>
+          <properties />
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>f.getSlotCarMap()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>parkingLotCreated()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>parkingLotCreated</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>slotCarMap.get(slotNo)</expression-string>
         <language-id>JAVA</language-id>
@@ -768,21 +820,6 @@
       </expression>
       <expression>
         <expression-string>assertTrue(&quot;createdparkinglotwith65slots&quot;.equalsIgnoreCase(outContent.toString().trim().replace(&quot; &quot;, &quot;&quot;)))</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>slotCarMap.get(((int) slotIndex))</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>slotCarMap.get(slotIndex)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>this.map1.values().stream().filter(x-&gt;x.getColor().equals(color)).map(Car::getRegNo).collect(Collectors.toList())</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -835,10 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#145#146#0" expanded="true" />
-            <element signature="e#200#201#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -846,56 +879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/parser/InputParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/constants/Commands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/exception/ExecutorException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -920,9 +903,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="39" column="30" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="85">
+            <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4880">
+          <caret line="140" column="7" lean-forward="true" selection-start-line="140" selection-start-column="7" selection-end-line="140" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/FloorManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/io/vaibhav/auto/parker/executor/ExecutorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/exception/ExecutorException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <element signature="e#318#319#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#771#772#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/parser/InputParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/constants/Commands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/IExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="204">
           <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -930,24 +998,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/ParkingManger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/executor/Executor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="125" column="47" selection-start-line="125" selection-start-column="16" selection-end-line="125" selection-end-column="47" />
+        <state relative-caret-position="357">
+          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/io/vaibhav/auto/parker/executor/ExecutorTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/model/ParkingSpace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="98" column="72" selection-start-line="98" selection-start-column="72" selection-end-line="98" selection-end-column="72" />
+        <state relative-caret-position="238">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#193#194#0" expanded="true" />
+            <element signature="e#222#223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/vaibhav/auto/parker/model/Floor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -6,11 +6,11 @@ import java.util.List;
 
 
 public interface IExecutor {
-    void createParkingLot(String lotCount);
+    void createParkingLot(String lotCount, String noOfFloors);
 
     void park(String regNo, String color) throws ExecutorException;
 
-    void leave(String slotNo) throws ExecutorException;
+    void leave(String slotNo, String floor) throws ExecutorException;
 
     void status() throws ExecutorException;
 
