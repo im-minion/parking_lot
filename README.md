@@ -1,4 +1,4 @@
-GOJEK Parking Lot Problem
+Parking Lot Problem
 
 ### Project Requirements
 
